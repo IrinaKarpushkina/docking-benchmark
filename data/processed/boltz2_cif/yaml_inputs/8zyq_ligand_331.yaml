@@ -1,0 +1,13 @@
+version: 1
+sequences:
+- protein:
+    id: A
+    sequence: KAVWDWLILLLVIYTAVFTPYSAAFLLKLIGLLKTARLLRLVRVARKLDRYSEYGAAVLFLLMCTFALIAHWLACIWYAIGNMEQPHRIGWLHNLGDQIGKPYGGPSIKDKYVTALYFTFSSLTSVGFGNVSPNTNSEKIFSICVMLIGSLMYASIFGNVSAIIQR
+- ligand:
+    id: L19
+    smiles: COc1cccc2cc3n(c12)CCN(CCCCN1CCn2c(cc4ccccc42)C1=O)C3
+templates:
+- cif: /mnt/tank/scratch/okonovalova/docking-benchmark/data/input/proteins/8zyq.cif
+properties:
+- affinity:
+    binder: L19

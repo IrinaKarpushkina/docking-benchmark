@@ -1,0 +1,13 @@
+version: 1
+sequences:
+- protein:
+    id: A
+    sequence: KAVWDWLILLLVIYTAVFTPYSAAFLLKLIGLLKTARLLRLVRVARKLDRYSEYGAAVLFLLMCTFALIAHWLACIWYAIGNMEQPHRIGWLHNLGDQIGKPYGGPSIKDKYVTALYFTFSSLTSVGFGNVSPNTNSEKIFSICVMLIGSLMYASIFGNVSAIIQR
+- ligand:
+    id: L3
+    smiles: C[C@@H](OC1CCC2NC1(c1ccccc1)CC2S(=O)(=O)c1ccccc1)c1cc(C(F)(F)F)cc(C(F)(F)F)c1
+templates:
+- cif: /mnt/tank/scratch/okonovalova/docking-benchmark/data/input/proteins/8zyq.cif
+properties:
+- affinity:
+    binder: L3

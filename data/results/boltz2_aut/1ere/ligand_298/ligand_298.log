@@ -1,0 +1,30 @@
+Command: boltz predict /mnt/tank/scratch/okonovalova/docking-benchmark/data/processed/boltz2_aut/yaml_inputs/1ere_ligand_298.yaml --out_dir /mnt/tank/scratch/okonovalova/docking-benchmark/data/results/boltz2_aut/1ere/ligand_298 --accelerator gpu --devices 1 --recycling_steps 3 --sampling_steps 200 --use_msa_server --use_potentials
+Exit code: 0
+=== STDOUT ===
+MSA server enabled: https://api.colabfold.com
+MSA server authentication: no credentials provided
+Checking input data.
+Processing 1 inputs with 1 threads.
+WARNING: RDKit ETKDGv3 failed to generate a conformer for molecule O=S(=O)(Oc1ccccc1)[C@H]1C[C@@H]2O[C@@H]1C(c1ccc(O)cc1)=C2c1ccc(O)cc1, so the program will start with random coordinates. Note that the performance of the model under this behaviour was not tested.
+Failed to process /mnt/tank/scratch/okonovalova/docking-benchmark/data/processed/boltz2_aut/yaml_inputs/1ere_ligand_298.yaml. Skipping. Error: Failed to compute 3D conformer for O=S(=O)(Oc1ccccc1)[C@H]1C[C@@H]2O[C@@H]1C(c1ccc(O)cc1)=C2c1ccc(O)cc1.
+
+=== STDERR ===
+
+  0%|          | 0/1 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/boltz/main.py", line 550, in process_input
+    target = parse_yaml(path, ccd, mol_dir, boltz2)
+  File "/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/boltz/data/parse/yaml.py", line 68, in parse_yaml
+    return parse_boltz_schema(name, data, ccd, mol_dir, boltz2)
+  File "/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/boltz/data/parse/schema.py", line 1249, in parse_boltz_schema
+    raise ValueError(msg)
+ValueError: Failed to compute 3D conformer for O=S(=O)(Oc1ccccc1)[C@H]1C[C@@H]2O[C@@H]1C(c1ccc(O)cc1)=C2c1ccc(O)cc1
+
+100%|██████████| 1/1 [00:35<00:00, 35.28s/it]
+100%|██████████| 1/1 [00:35<00:00, 35.28s/it]
+/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python3.10 /mnt/tank/scratch/okonovalova/miniconda3/envs/bo ...
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `pytorch_lightning` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+

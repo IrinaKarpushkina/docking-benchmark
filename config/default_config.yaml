@@ -1,0 +1,50 @@
+# Default configuration for docking benchmark
+
+# Base directories
+base_dir: "data"
+protein_dir: "data/input/proteins"
+ligand_dir: "data/input/ligands"
+output_dir: "results"
+processed_dir: "processed"
+protein_settings_file: null
+box_settings_file: null
+labox:
+  method: "labox"
+  scale: 2.0
+  fallback_method: "default"
+
+# Random state for reproducibility
+random_state: 42
+
+# Methods to run (list of method names)
+methods:
+  - qvina
+  - boltz2_aut
+  - boltz2_cif
+  # - dynamicbind
+  # - unimol
+  # - interformer
+  # - gnina
+  # - plapt
+
+# Parallelization settings
+parallelization:
+  type: "slurm"  # Options: "slurm", "multiprocessing", "sequential"
+  max_workers: 4
+  batch_size: 10
+
+# Logging
+logging:
+  level: "INFO"
+  file: "benchmark.log"
+  console: true
+
+# Environment configuration
+# Specify conda environments for different stages
+environments:
+  preprocessing: "meeko"  # Environment for file preparation (Meeko, RDKit)
+  # Method-specific environments (if not specified, uses preprocessing env)
+  # qvina: "qvina-env"
+  # boltz2: "boltz-env"
+  # gnina: "gnina-env"
+

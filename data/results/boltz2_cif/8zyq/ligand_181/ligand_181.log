@@ -1,0 +1,23 @@
+Command: boltz predict /mnt/tank/scratch/okonovalova/docking-benchmark/data/processed/boltz2_cif/yaml_inputs/8zyq_ligand_181.yaml --out_dir /mnt/tank/scratch/okonovalova/docking-benchmark/data/results/boltz2_cif/8zyq/ligand_181 --accelerator gpu --devices 1 --recycling_steps 3 --sampling_steps 200 --use_potentials
+Exit code: 0
+=== STDOUT ===
+Checking input data.
+Processing 1 inputs with 1 threads.
+Failed to process /mnt/tank/scratch/okonovalova/docking-benchmark/data/processed/boltz2_cif/yaml_inputs/8zyq_ligand_181.yaml. Skipping. Error: Missing MSA's in input and --use_msa_server flag not set..
+
+=== STDERR ===
+
+  0%|          | 0/1 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/boltz/main.py", line 582, in process_input
+    raise RuntimeError(msg)  # noqa: TRY301
+RuntimeError: Missing MSA's in input and --use_msa_server flag not set.
+
+100%|██████████| 1/1 [00:00<00:00,  1.30it/s]
+100%|██████████| 1/1 [00:00<00:00,  1.30it/s]
+/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python3.10 /mnt/tank/scratch/okonovalova/miniconda3/envs/bo ...
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `pytorch_lightning` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+

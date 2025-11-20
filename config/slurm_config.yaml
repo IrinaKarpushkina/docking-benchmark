@@ -1,0 +1,45 @@
+# SLURM configuration for job submission
+
+# Default SLURM parameters
+default:
+  job_name: "docking_benchmark"
+  time: "24:00:00"
+  nodes: 1
+  ntasks_per_node: 1
+  cpus_per_task: 8
+  mem: "32G"
+  partition: "gpu"  # Adjust to your cluster partition
+  gpus: 1
+  gpu_type: "gpu:v100:1"  # Adjust to your GPU type
+
+# Method-specific SLURM parameters (override defaults)
+method_overrides:
+  boltz2:
+    gpus: 1
+    mem: "64G"
+    time: "48:00:00"
+  
+  qvina:
+    gpus: 0
+    cpus_per_task: 4
+    mem: "16G"
+  
+  vina:
+    gpus: 0
+    cpus_per_task: 4
+    mem: "16G"
+
+# Array job settings
+array:
+  max_parallel: 10  # Maximum number of parallel jobs
+  batch_size: 100   # Number of tasks per array job
+
+
+
+
+
+
+
+
+
+

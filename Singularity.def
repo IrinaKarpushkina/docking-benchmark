@@ -1,0 +1,35 @@
+Bootstrap: docker
+From: continuumio/miniconda3:latest
+
+%files
+    environment.yml /app/environment.yml
+    requirements.txt /app/requirements.txt
+    . /app
+
+%environment
+    export PATH=/opt/conda/envs/docking-benchmark/bin:$PATH
+
+%post
+    apt-get update && apt-get install -y \
+        build-essential \
+        wget \
+        && rm -rf /var/lib/apt/lists/*
+    
+    cd /app
+    conda env create -f environment.yml
+    conda clean -afy
+    
+    pip install -e .
+
+%runscript
+    exec "$@"
+
+
+
+
+
+
+
+
+
+

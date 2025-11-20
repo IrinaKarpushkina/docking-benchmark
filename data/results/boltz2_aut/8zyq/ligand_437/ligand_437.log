@@ -1,0 +1,61 @@
+Command: boltz predict /mnt/tank/scratch/okonovalova/docking-benchmark/data/processed/boltz2_aut/yaml_inputs/8zyq_ligand_437.yaml --out_dir /mnt/tank/scratch/okonovalova/docking-benchmark/data/results/boltz2_aut/8zyq/ligand_437 --accelerator gpu --devices 1 --recycling_steps 3 --sampling_steps 200 --use_msa_server --use_potentials
+Exit code: 0
+=== STDOUT ===
+MSA server enabled: https://api.colabfold.com
+MSA server authentication: no credentials provided
+Checking input data.
+Processing 1 inputs with 1 threads.
+Generating MSA for /mnt/tank/scratch/okonovalova/docking-benchmark/data/processed/boltz2_aut/yaml_inputs/8zyq_ligand_437.yaml with 1 protein entities.
+Calling MSA server for target 8zyq_ligand_437 with 1 sequences
+MSA server URL: https://api.colabfold.com
+MSA pairing strategy: greedy
+No authentication provided for MSA server
+Running structure prediction for 1 input.
+
+Predicting: |          | 0/? [00:00<?, ?it/s]
+Predicting:   0%|          | 0/1 [00:00<?, ?it/s]
+Predicting DataLoader 0:   0%|          | 0/1 [00:00<?, ?it/s]
+Predicting DataLoader 0: 100%|██████████| 1/1 [00:35<00:00,  0.03it/s]Number of failed examples: 0
+
+Predicting DataLoader 0: 100%|██████████| 1/1 [00:35<00:00,  0.03it/s]
+
+Predicting property: affinity
+
+Checking input data for affinity.
+Running affinity prediction for 1 input.
+
+Predicting: |          | 0/? [00:00<?, ?it/s]
+Predicting:   0%|          | 0/1 [00:00<?, ?it/s]
+Predicting DataLoader 0:   0%|          | 0/1 [00:00<?, ?it/s]
+Predicting DataLoader 0: 100%|██████████| 1/1 [00:18<00:00,  0.05it/s]Number of failed examples: 0
+
+Predicting DataLoader 0: 100%|██████████| 1/1 [00:18<00:00,  0.05it/s]
+
+=== STDERR ===
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+
+  0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+
+SUBMIT:   0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+
+COMPLETE:   0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+
+COMPLETE: 100%|██████████| 150/150 [elapsed: 00:00 remaining: 00:00][A
+COMPLETE: 100%|██████████| 150/150 [elapsed: 00:02 remaining: 00:00]
+
+100%|██████████| 1/1 [00:03<00:00,  3.18s/it]
+100%|██████████| 1/1 [00:03<00:00,  3.18s/it]
+/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python3.10 /mnt/tank/scratch/okonovalova/miniconda3/envs/bo ...
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `pytorch_lightning` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+You are using a CUDA device ('NVIDIA RTX A6000') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/pytorch_lightning/utilities/migration/utils.py:56: The loaded checkpoint was produced with Lightning v2.5.0.post0, which is newer than your current Lightning version: v2.5.0
+/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python3.10 /mnt/tank/scratch/okonovalova/miniconda3/envs/bo ...
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+

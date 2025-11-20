@@ -1,0 +1,110 @@
+Command: boltz predict /mnt/tank/scratch/okonovalova/docking-benchmark/data/processed/boltz2_aut/yaml_inputs/1ere_ligand_81.yaml --out_dir /mnt/tank/scratch/okonovalova/docking-benchmark/data/results/boltz2_aut/1ere/ligand_81 --accelerator gpu --devices 1 --recycling_steps 3 --sampling_steps 200 --use_msa_server --use_potentials
+Exit code: 0
+=== STDOUT ===
+MSA server enabled: https://api.colabfold.com
+MSA server authentication: no credentials provided
+Checking input data.
+Processing 1 inputs with 1 threads.
+Generating MSA for /mnt/tank/scratch/okonovalova/docking-benchmark/data/processed/boltz2_aut/yaml_inputs/1ere_ligand_81.yaml with 1 protein entities.
+Calling MSA server for target 1ere_ligand_81 with 1 sequences
+MSA server URL: https://api.colabfold.com
+MSA pairing strategy: greedy
+No authentication provided for MSA server
+Failed to process /mnt/tank/scratch/okonovalova/docking-benchmark/data/processed/boltz2_aut/yaml_inputs/1ere_ligand_81.yaml. Skipping. Error: Too many failed attempts for the MSA generation request..
+
+=== STDERR ===
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+
+  0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+
+SUBMIT:   0%|          | 0/150 [elapsed: 00:00 remaining: ?][AError while fetching result from MSA server. Retrying... (1/5)
+Error: HTTPSConnectionPool(host='api.colabfold.com', port=443): Max retries exceeded with url: /ticket/msa (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f916607cca0>, 'Connection to api.colabfold.com timed out. (connect timeout=6.02)'))
+Error while fetching result from MSA server. Retrying... (2/5)
+Error: HTTPSConnectionPool(host='api.colabfold.com', port=443): Max retries exceeded with url: /ticket/msa (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f916607d540>, 'Connection to api.colabfold.com timed out. (connect timeout=6.02)'))
+Error while fetching result from MSA server. Retrying... (3/5)
+Error: HTTPSConnectionPool(host='api.colabfold.com', port=443): Max retries exceeded with url: /ticket/msa (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f916607d570>, 'Connection to api.colabfold.com timed out. (connect timeout=6.02)'))
+Error while fetching result from MSA server. Retrying... (4/5)
+Error: HTTPSConnectionPool(host='api.colabfold.com', port=443): Max retries exceeded with url: /ticket/msa (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f916607ccd0>, 'Connection to api.colabfold.com timed out. (connect timeout=6.02)'))
+Error while fetching result from MSA server. Retrying... (5/5)
+Error: HTTPSConnectionPool(host='api.colabfold.com', port=443): Max retries exceeded with url: /ticket/msa (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f916607dd80>, 'Connection to api.colabfold.com timed out. (connect timeout=6.02)'))
+Error while fetching result from MSA server. Retrying... (6/5)
+Error: HTTPSConnectionPool(host='api.colabfold.com', port=443): Max retries exceeded with url: /ticket/msa (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f916607e5c0>, 'Connection to api.colabfold.com timed out. (connect timeout=6.02)'))
+
+SUBMIT:   0%|          | 0/150 [elapsed: 01:01 remaining: ?]
+Traceback (most recent call last):
+  File "/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/urllib3/connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+  File "/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/urllib3/connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7f916607e5c0>, 'Connection to api.colabfold.com timed out. (connect timeout=6.02)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.colabfold.com', port=443): Max retries exceeded with url: /ticket/msa (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f916607e5c0>, 'Connection to api.colabfold.com timed out. (connect timeout=6.02)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/boltz/data/msa/mmseqs2.py", line 77, in submit
+    res = requests.post(
+  File "/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/requests/adapters.py", line 688, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.colabfold.com', port=443): Max retries exceeded with url: /ticket/msa (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f916607e5c0>, 'Connection to api.colabfold.com timed out. (connect timeout=6.02)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/boltz/main.py", line 587, in process_input
+    compute_msa(
+  File "/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/boltz/main.py", line 483, in compute_msa
+    unpaired_msa = run_mmseqs2(
+  File "/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/boltz/data/msa/mmseqs2.py", line 201, in run_mmseqs2
+    out = submit(seqs_unique, mode, N)
+  File "/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/boltz/data/msa/mmseqs2.py", line 92, in submit
+    raise Exception(
+Exception: Too many failed attempts for the MSA generation request.
+
+100%|██████████| 1/1 [01:01<00:00, 61.99s/it]
+100%|██████████| 1/1 [01:01<00:00, 61.99s/it]
+/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python3.10 /mnt/tank/scratch/okonovalova/miniconda3/envs/bo ...
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/mnt/tank/scratch/okonovalova/miniconda3/envs/boltz-env/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `pytorch_lightning` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+

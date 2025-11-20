@@ -1,0 +1,57 @@
+# Configuration for each docking method
+
+qvina:
+  binary: "qvina02"  # Path to qvina02 executable
+  exhaustiveness: 8
+  num_modes: 9
+  energy_range: 3
+  docking_timeout: 120  # Timeout in seconds (2 minutes for QVina)
+  conda_env: ""  # Optional: conda environment name (if empty, uses preprocessing env)
+
+boltz2_aut:
+  use_msa_server: true  # Use automatic MSA server
+  use_potentials: true
+  recycling_steps: 3
+  sampling_steps: 200  # Number of sampling steps
+  diffusion_samples: 1
+  num_models: 1
+  accelerator: "gpu"  # gpu, cpu, or tpu
+  devices: 1  # Number of devices to use
+  docking_timeout: 600  # Timeout in seconds (10 minutes)
+  conda_env: "boltz-env"  # Conda environment for Boltz-2
+
+boltz2_cif:
+  use_potentials: true
+  recycling_steps: 3
+  sampling_steps: 200  # Number of sampling steps
+  diffusion_samples: 1
+  num_models: 1
+  accelerator: "gpu"  # gpu, cpu, or tpu
+  devices: 1  # Number of devices to use
+  docking_timeout: 600  # Timeout in seconds (10 minutes)
+  cif_dir: "data/input/proteins"  # Directory with CIF files for MSA
+  conda_env: "boltz-env"  # Conda environment for Boltz-2
+
+dynamicbind:
+  binary: ""  # Path to dynamicbind executable
+  config: ""  # Path to config file
+
+unimol:
+  binary: ""  # Path to unimol executable
+  config: ""  # Path to config file
+
+interformer:
+  binary: ""  # Path to interformer executable
+  config: ""  # Path to config file
+
+gnina:
+  binary: "gnina"  # Path to gnina executable
+  exhaustiveness: 8
+  num_modes: 9
+  autobox_ligand: ""  # Optional: path to reference ligand for autobox
+  conda_env: ""  # Optional: conda environment name (if empty, uses preprocessing env)
+
+plapt:
+  binary: ""  # Path to plapt executable
+  config: ""  # Path to config file
+
