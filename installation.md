@@ -10,7 +10,8 @@ conda install -c conda-forge rdkit biopython pandas numpy matplotlib seaborn
 ```
 pip install meeko
 ```
-###To install gnina
+### To install gnina
+
 Поиск пути к CUDA
 ```
 find /usr -name libcudart.so 2>/dev/null
@@ -33,11 +34,5 @@ conda install cudatoolkit=11.5 -c nvidia
 ```
 Установка OpenBabel
 ```
-git clone https://github.com/dkoes/openbabel.git
-cd openbabel
-mkdir build
-cd build
-cmake -DCMAKE_INSTALL_PREFIX=~/local -DWITH_MAEPARSER=OFF -DWITH_COORDGEN=OFF -DPYTHON_BINDINGS=ON -DRUN_SWIG=ON -DCMAKE_PREFIX_PATH=$CONDA_PREFIX ..
-make -j$(nproc)
-make install
+conda install -c conda-forge openbabel
 ```
