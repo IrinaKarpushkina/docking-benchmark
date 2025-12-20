@@ -37,3 +37,15 @@ conda install -c conda-forge cuda-runtime=12.4
 ```
 conda install -c conda-forge openbabel
 ```
+```
+conda env config vars set LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
+```
+Установка исполняемого файла gnina
+```
+mkdir -p bin
+wget https://github.com/gnina/gnina/releases/download/v1.3/gnina -O ./bin/gnina
+chmod +x ./bin/gnina
+
+# Добавлено в ~/.bashrc для вызова команды 'gnina' из любого места:
+export PATH="/mnt/tank/scratch/ikarpushkina/docking-benchmark-2/bin:$PATH"
+```
