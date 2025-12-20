@@ -31,7 +31,7 @@ export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
 conda install -c conda-forge boost eigen glog protobuf hdf5 openblas cmake git make jsoncpp pytest
 ```
 ```
-conda install cudatoolkit=11.5 -c nvidia
+conda install -c conda-forge cuda-runtime=12.4
 ```
 Установка OpenBabel
 ```
