@@ -49,3 +49,4 @@ chmod +x ./bin/gnina
 # Добавлено в ~/.bashrc для вызова команды 'gnina' из любого места:
 export PATH="/mnt/tank/scratch/ikarpushkina/docking-benchmark-2/bin:$PATH"
 ```
+### To install plapt
