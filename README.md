@@ -4,7 +4,7 @@
 git clone <repository-url>
 cd docking-benchmark
 ```
-### Install common+gnina env
+### Install common+qvina env
 Create env
 ```
 conda create -n docking_env -c conda-forge python=3.10 "numpy<2.0" pandas matplotlib seaborn pyyaml meeko rdkit scipy biopython
@@ -36,7 +36,7 @@ conda activate plapt
 pip install --upgrade transformers
 pip install --upgrade accelerate
 ```
-### To install gnina
+### Install gnina env
 Create env
 ```
 conda create -n gnina python=3.10
@@ -77,3 +77,25 @@ chmod +x ./bin/gnina
 
 # Добавлено в ~/.bashrc для вызова команды 'gnina' из любого места:
 export PATH="/mnt/tank/scratch/ikarpushkina/docking-benchmark-2/bin:$PATH"
+
+### Install DynamicBind env
+Clone the repository
+```
+git clone https://github.com/luwei0917/DynamicBind.git
+cd DynamicBind
+```
+Create a new environment for inference. While in the project directory run
+```
+conda env create -f environment.yml
+```
+Create a new environment for structural Relaxation.
+```
+conda create --name relax python=3.8
+conda activate relax
+```
+Install dependencies
+```
+conda install -c conda-forge openmm pdbfixer libstdcxx-ng openmmforcefields openff-toolkit ambertools=22 compilers biopython
+```
+Checkpoints Download
+Download and unzip the workdir.zip containing the model checkpoint form https://zenodo.org/records/10137507, v2 is contained here https://zenodo.org/records/10183369.
