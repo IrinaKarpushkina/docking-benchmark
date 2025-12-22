@@ -3,6 +3,7 @@
 ```
 git clone <repository-url>
 cd docking-benchmark
+---
 ```
 ### Install common+qvina env
 Create env
@@ -15,6 +16,7 @@ wget https://github.com/QVina/qvina/raw/master/bin/qvina02
 chmod +x qvina02
 ./qvina02 --help
 ```
+---
 ### Install boltz2 env
 ```
 conda create -n boltz-env python=3.10
@@ -23,6 +25,7 @@ Download boltz2
 ```
 pip install boltz[cuda] -U
 ```
+---
 ### Install plapt env
 Clone the repository
 ```
@@ -36,6 +39,7 @@ conda activate plapt
 pip install --upgrade transformers
 pip install --upgrade accelerate
 ```
+---
 ### Install gnina env
 Create env
 ```
@@ -74,10 +78,12 @@ conda env config vars set LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
 mkdir -p bin
 wget https://github.com/gnina/gnina/releases/download/v1.3/gnina -O ./bin/gnina
 chmod +x ./bin/gnina
-
-# Добавлено в ~/.bashrc для вызова команды 'gnina' из любого места:
+```
+Добавлено в ~/.bashrc для вызова команды 'gnina' из любого места:
+```
 export PATH="/mnt/tank/scratch/ikarpushkina/docking-benchmark-2/bin:$PATH"
-
+```
+---
 ### Install DynamicBind env
 Clone the repository
 ```
@@ -99,3 +105,7 @@ conda install -c conda-forge openmm pdbfixer libstdcxx-ng openmmforcefields open
 ```
 Checkpoints Download
 Download and unzip the workdir.zip containing the model checkpoint form https://zenodo.org/records/10137507, v2 is contained here https://zenodo.org/records/10183369.
+```
+ wget https://zenodo.org/records/10183369/files/workdir.zip?download=1
+ unzip  'workdir.zip?download=1'
+```
